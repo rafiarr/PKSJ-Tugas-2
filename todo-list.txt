@@ -2,7 +2,7 @@ To do :
 - Install Apache server V -> browser 10.151.32.113
 - Install Mysql Server V -> terminal mysql -u root -p
 - Install PHP V -> php --version
-- Install WordPress
+- Install WordPress V -> browser 10.151.32.113
 - Uji Penetrasi
 
 Reference :
