@@ -2,6 +2,8 @@ To do :
 - Install Apache server V -> browser 10.151.32.113
 - Install Mysql Server V -> terminal mysql -u root -p
 - Install PHP V -> php --version
+- Install WordPress
+- Uji Penetrasi
 
 Reference :
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
