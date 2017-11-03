@@ -15,3 +15,6 @@ Contoh :
 ruby wpscan.rb -u "10.151.32.113"
 ```
 Pada contoh diatas, kami memiliki halaman wordpress pada jaringan lokal yang dapat diakses melalui ip 10.151.32.113. Berikut hasil yang di tampilkan oleh WPScan :
+
+![WPScan URI 1](/Images/WPScan-URI1.png)
+![WPScan URI 1](/Images/WPScan-URI2.png)
