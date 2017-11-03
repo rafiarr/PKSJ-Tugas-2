@@ -7,8 +7,8 @@ Dokumentasi Laporan Tugas PKSJ Uji Penetrasi SQLInjection
 
 ## Instalasi
 
-[Instalasi Wordpress](lalalal).
-[Instalasi LeagueManager 3.9.1.1](lalalal).
+[Instalasi Wordpress](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_wordpress.md).
+[Instalasi LeagueManager 3.9.1.1](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_leaguemanager.md).
 [Instalasi WPScan](lalal).
 [Instalasi SQLMap](lalala).
 
