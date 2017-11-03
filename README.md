@@ -5,9 +5,13 @@ Dokumentasi Laporan Tugas PKSJ Uji Penetrasi SQLInjection
 
 ## Dasar Teori
 
- [Dasar Teori](lalalla).
-
 ## Instalasi
+
+[Instalasi Wordpress](lalalal).
+[Instalasi LeagueManager 3.9.1.1](lalalal).
+[Instalasi WPScan](lalal).
+[Instalasi SQLMap](lalala).
+
  [Instalasi](lalal).
 
 ## Uji Penetrasi SQL Injection
