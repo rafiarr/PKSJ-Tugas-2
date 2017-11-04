@@ -32,7 +32,9 @@ Biasanya, langkah untuk mencari celah sistem untuk diinjeksi menggunakan metode 
 
 * Search Engine: String yang dimasukkan oleh user dapat digunakan sebagai query SQL yang mengekstrak seluruh isi database yang ada.
 
+* Halaman Product List: Situs e-commerce dan beberapa sistem umum selalu memiliki product listing, dan halaman-halaman tersebut biasanya disimpan pada database relasional.
 
+Tester biasanya membuat daftar dari seluruh input
 
 ###Wordpress
  
@@ -52,3 +54,38 @@ Biasanya, langkah untuk mencari celah sistem untuk diinjeksi menggunakan metode 
 ## Kesimpulan dan Saran
 
  [Defence dan Countermeasure](lalala).
+
+ Sebagaimana telah dijelaskan bahwa SQL Injection umum dilakukan karena:
+ 
+ 1. Vulnerabilities SQL selalu umum dan banyak diketahui orang sehingga lebih mudah melakukan injeksi karena metode-metode atau celah yang sudah sering ada dan mudah diterobos.
+ 2. Interaksi dengan data selalu menarik dan mengakibatkan dampak yang sangat signifikan bagi sistem, sehingga beberapa orang merasa tertantang, dan beberapa penyerang lain memang berusaha memberikan dampak serius bagi sistem.
+ 
+ Dibawah ini dituliskan macam-macam metode pencegahan yang dapat digunakan untuk menghindari serangan SQL Injection.
+ 
+ Perlindungan Inti/Primer:
+ 
+ - Menggunakan __Prepared Statement__ (atau __*Parameterized Query*__)
+ - Menggunakan __Stored Procedure__
+ - Memiliki _Whitelist Input_ yang dibolehkan
+ - Melakukan _escaping_ untuk semua Input dari user
+ 
+ Perlindungan Tambahan:
+ 
+ - Prinsip __Least Privilege__
+ - Tambahan _Whitelist Input Validation_
+ 
+ Contoh kode yang tidak terlindungi oleh SQL Injection
+ 
+ ```Java
+  String query = "SELECT account_balance FROM user_data WHERE user_name = "
+    + request.getParameter("customerName");
+  
+  try {
+  	Statement statement = connection.createStatement( … );
+  	ResultSet results = statement.executeQuery( query );
+  }
+ ```
+ 
+ Perlindungan Primer 1: Menggunakan Prepared Statement (dengan Parameterized Query)
+ 
+ Penggunaan Prepared Statement dengan _variable binding_ memaksa developer untuk pertama-tama mendefinisikan kode SQL dan mengirimkan masing-masing parameter 
