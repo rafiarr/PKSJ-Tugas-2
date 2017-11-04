@@ -47,9 +47,9 @@ Tester biasanya membuat daftar dari seluruh input
 
 [Instalasi LeagueManager 3.9.1.1](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_leaguemanager.md).
 
-[Instalasi WPScan](lalal).
+[Instalasi WPScan](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_wpscan.md).
 
-[Instalasi SQLMap](lalala).
+[Instalasi SQLMap](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_sqlmap.md).
 
 ## Uji Penetrasi SQL Injection
  [Uji Penetrasi SQL Injection](lalal)
