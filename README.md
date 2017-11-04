@@ -37,10 +37,25 @@ Biasanya, langkah untuk mencari celah sistem untuk diinjeksi menggunakan metode 
 Tester biasanya membuat daftar dari seluruh input
 
 ###Wordpress
- 
+
+WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi. Nama WordPress diusulkan oleh Christine Selleck, teman Matt Mullenweg. WordPress saat ini menjadi platform content management system (CMS) bagi beberapa situs web ternama seperti CNN, Reuters, The New York Times, TechCrunch, dan lainnya.
+
+Rilis terbaru WordPress adalah versi 4.8.1 (2 Agustus 2017). WordPress didistribusikan dengan Lisensi Publik Umum GNU.
+
 ###WPScan
+
+WPScan adalah scanner keamanan yang memeriksa keamanan WordPress menggunakan metode _black box_. WpScan ini ditulis dengan bahasa Ruby.
+
+Fitur dari WpScan:
+
+1. Pencacah Username
+2. Multithreaded Bruteforce Password Cracking
+3. Plugin WordPress version Checker
+4. Wordpress Plugin Vulnerabilities Scanner
  
 ###SQLMap
+
+Sqlmap adalah tools opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server.
 
 ## Instalasi
 [Instalasi Wordpress](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_wordpress.md).
@@ -73,6 +88,7 @@ Tester biasanya membuat daftar dari seluruh input
  
  - Prinsip __Least Privilege__
  - Tambahan _Whitelist Input Validation_
+ - Menggunakan Tool
  
  Contoh kode yang tidak terlindungi oleh SQL Injection
  
@@ -86,6 +102,20 @@ Tester biasanya membuat daftar dari seluruh input
   }
  ```
  
- Perlindungan Primer 1: Menggunakan Prepared Statement (dengan Parameterized Query)
+#####Perlindungan Primer 1: Menggunakan Prepared Statement (dengan Parameterized Query)
  
- Penggunaan Prepared Statement dengan _variable binding_ memaksa developer untuk pertama-tama mendefinisikan kode SQL dan mengirimkan masing-masing parameter 
+ Penggunaan Prepared Statement dengan _variable binding_ memaksa developer untuk pertama-tama mendefinisikan kode SQL dan mengirimkan masing-masing parameter kedalam query tersebut. Penulisan kode seperti ini memberikan pemisah/pengenal antara kode dan data, terlepas dari input yang diberikan oleh user.
+ 
+ Prepared Statement memastikan bahwa penyerang tidak dapat mengganti maksud dari query, meskipun sebuah perintah SQL dimasukkan kedalam query awal oleh penyerang.
+ 
+#####Perlindungan Primer 2: Menggunakan Stored Procedure
+
+Stored Procedure tidak selalu memastikan keamanan dari SQL Injection
+
+#####Perlindungan Tambahan 3: Menggunakan Tool
+
+Terdapat beberapa tool tambahan yang dapat digunakan walaupun tidak secara langsung membantu, seperti salah satunya _Intrusion Deetection System (IDS)_
+
+Salah satu yang marak digunakan adalah _Snort_, selain itu terdapat _Suricata_, _Bro_, _Kismet_.
+
+Intrusion Detection System adalah sejenis perangkat lunak yang berfungsi untuk mendeteksi intrusi sistem. Intrusi disini adalah menganalisa segala macam serangan yang terjadi dari luar sistem.
