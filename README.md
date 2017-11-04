@@ -23,7 +23,15 @@ Ada banyak cara untuk menguji apakah sebuah sistem rentan terhadap serangan SQL 
  * SQL Injection sangat umum terjadi pada server berbasiskan PHP dan ASP.
  * Kekuatan dari serangan SQL Injection terbatas pada kemampuan penyerangnya, dan untuk mengurangi serangannya, maka pertahanan terhadap SQL Injection perlu dilakukan, karena SQL Injection akan mengakibatkan dampak yang sangat besar jika berhasil diimplementasikan.
 
-####Testing Query SQL Injection
+####Testing SQL Injection
+
+Biasanya, langkah untuk mencari celah sistem untuk diinjeksi menggunakan metode SQL Injection adalah memahami kapan aplikasi terhubung dengan database untuk mengakses beberapa data. Contoh dari hubungan antara aplikasi dengan database adalah:
+
+* Form Autentikasi: Saat autentikasi dilakukan dengan menggunakan web form, kemungkinan pengecekan user akan dilakukan terhadap database yang berisi seluruh username dan password.
+
+* Search Engine: String yang dimasukkan oleh user dapat digunakan sebagai query SQL yang mengekstrak seluruh isi database yang ada.
+
+
 
 ###Wordpress
  
