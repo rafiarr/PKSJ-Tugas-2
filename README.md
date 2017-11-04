@@ -59,9 +59,12 @@ Sqlmap adalah tools opensource yang mendeteksi dan melakukan exploit pada bug SQ
 
 ## Instalasi
 [Instalasi Wordpress](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_wordpress.md).
+
 [Instalasi LeagueManager 3.9.1.1](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_leaguemanager.md).
-[Instalasi WPScan](lalal).
-[Instalasi SQLMap](lalala).
+
+[Instalasi WPScan](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_wpscan.md).
+
+[Instalasi SQLMap](https://github.com/rafiarr/PKSJ-Tugas-2/blob/master/instalasi_sqlmap.md).
 
 ## Uji Penetrasi SQL Injection
  [Uji Penetrasi SQL Injection](lalal)
