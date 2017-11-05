@@ -12,19 +12,19 @@ Ada banyak cara untuk menguji apakah sebuah sistem rentan terhadap serangan SQL 
 
  [SQL Injection](#sql-injection).
  
-###SQL Injection
+### SQL Injection
  
  SQL Injection adalah suatu serangan yang terdiri dari penyisipan atau *injection* query melalui input data dari client ke aplikasi. SQL Injection yang berhasil dilakukan akan membaca data sensitif dari database, memodifikasi isi database (insert, select, update) dan mengeksekusi operasi administrasi database (seperti shutdown DBMS).
  Serangan SQL Injection adalah serangan yang bertipe injeksi, dimana perintah SQL di inject atau di input untuk mendapatkan hasil dari perintah SQL yang telah dibuat.
 
 
-####Model Ancaman
+#### Model Ancaman
  
  * SQL Injection memungkinkan penyerang untuk mengambil identitas, merusak data, juga menyebabkan kegagalan transaksi atau mengubah isi saldo, serta memungkinkan untuk membuka seluruh data pada sistem, menghancurkan data atau membuat data tersebut tidak tersedia, dan juga menjadi administrator dari database server.
  * SQL Injection sangat umum terjadi pada server berbasiskan PHP dan ASP.
  * Kekuatan dari serangan SQL Injection terbatas pada kemampuan penyerangnya, dan untuk mengurangi serangannya, maka pertahanan terhadap SQL Injection perlu dilakukan, karena SQL Injection akan mengakibatkan dampak yang sangat besar jika berhasil diimplementasikan.
 
-####Testing SQL Injection
+#### Testing SQL Injection
 
 Biasanya, langkah untuk mencari celah sistem untuk diinjeksi menggunakan metode SQL Injection adalah memahami kapan aplikasi terhubung dengan database untuk mengakses beberapa data. Contoh dari hubungan antara aplikasi dengan database adalah:
 
@@ -36,13 +36,13 @@ Biasanya, langkah untuk mencari celah sistem untuk diinjeksi menggunakan metode 
 
 Tester biasanya membuat daftar dari seluruh input
 
-###Wordpress
+### Wordpress
 
 WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi. Nama WordPress diusulkan oleh Christine Selleck, teman Matt Mullenweg. WordPress saat ini menjadi platform content management system (CMS) bagi beberapa situs web ternama seperti CNN, Reuters, The New York Times, TechCrunch, dan lainnya.
 
 Rilis terbaru WordPress adalah versi 4.8.1 (2 Agustus 2017). WordPress didistribusikan dengan Lisensi Publik Umum GNU.
 
-###WPScan
+### WPScan
 
 WPScan adalah scanner keamanan yang memeriksa keamanan WordPress menggunakan metode _black box_. WpScan ini ditulis dengan bahasa Ruby.
 
@@ -53,7 +53,7 @@ Fitur dari WpScan:
 3. Plugin WordPress version Checker
 4. Wordpress Plugin Vulnerabilities Scanner
  
-###SQLMap
+### SQLMap
 
 Sqlmap adalah tools opensource yang mendeteksi dan melakukan exploit pada bug SQL injection secara otomatis. dengan melakukan serangan SQL injection seorang attacker dapat mengambil alih serta memanipulasi sebuah database di dalam sebuah server.
 
@@ -105,17 +105,17 @@ Sqlmap adalah tools opensource yang mendeteksi dan melakukan exploit pada bug SQ
   }
  ```
  
-#####Perlindungan Primer 1: Menggunakan Prepared Statement (dengan Parameterized Query)
+##### Perlindungan Primer 1: Menggunakan Prepared Statement (dengan Parameterized Query)
  
  Penggunaan Prepared Statement dengan _variable binding_ memaksa developer untuk pertama-tama mendefinisikan kode SQL dan mengirimkan masing-masing parameter kedalam query tersebut. Penulisan kode seperti ini memberikan pemisah/pengenal antara kode dan data, terlepas dari input yang diberikan oleh user.
  
  Prepared Statement memastikan bahwa penyerang tidak dapat mengganti maksud dari query, meskipun sebuah perintah SQL dimasukkan kedalam query awal oleh penyerang.
  
-#####Perlindungan Primer 2: Menggunakan Stored Procedure
+##### Perlindungan Primer 2: Menggunakan Stored Procedure
 
 Stored Procedure tidak selalu memastikan keamanan dari SQL Injection
 
-#####Perlindungan Tambahan 3: Menggunakan Tool
+##### Perlindungan Tambahan 3: Menggunakan Tool
 
 Terdapat beberapa tool tambahan yang dapat digunakan walaupun tidak secara langsung membantu, seperti salah satunya _Intrusion Deetection System (IDS)_
 
