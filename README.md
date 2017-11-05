@@ -34,7 +34,43 @@ Biasanya, langkah untuk mencari celah sistem untuk diinjeksi menggunakan metode 
 
 * Halaman Product List: Situs e-commerce dan beberapa sistem umum selalu memiliki product listing, dan halaman-halaman tersebut biasanya disimpan pada database relasional.
 
-Tester biasanya membuat daftar dari seluruh input
+Tester biasanya membuat daftar dari seluruh input yang memiliki kemungkinan untuk membuat query SQL, termasuk field tersembunyi pada POST request, lalu mengujinya secara terpisah, dan menambahkan query untuk menciptakan error.
+
+Testing yang pertama dilakukan adalah dengan menambahkan tanda kutip satu __(')__ atau titik koma __(;)__ pada field yang diuji. Kutip satu digunakan pada SQL sebagai string pemisah dan jika tidak di filter oleh aplikasi maka akan memunculkan query yang salah. Titik koma digunakan untuk mengakhiri statement SQL dan jika tidak di filter, maka hasilnya juga akan membuat suatu error.
+
+Serta, comment __(--)__ dan keyword SQL lainnya seperti __'AND'__ dan __'OR'__ dapat digunakan untuk memodifikasi query. Hal yang sederhana, namun terkadang masih menjadi teknik yang efektif untuk memasukkan string, dimana membutuhkan sejumlah tabel dan kolom pada saat error terjadi. Suatu pesan error akan menyedia informasi yang dibutuhkan oleh tester.
+
+1. Standar Testing SQL Injection
+
+Query sederhana:
+
+```sql
+SELECT * FROM users WHERE username='$username' AND password = '$password'
+```
+
+Query tersebut biasanya digunakan untuk mengautentikasi user. Jika query mengembalikan nilai maka data user ada didalam database, dan user dapat melakukan login kedalam sistem. Nilai dari input biasanya diperoleh dari user melalui web form. Jika dimasukkan nilai username dan password seperti berikut ini:
+
+```php
+$username = 1' or '1' = '1
+$password = 1' or '1' = '1
+```
+
+Query akan menjadi seperti:
+
+```sql
+SELECT * FROM users where username = '1' OR '1' = '1' AND password = '1' OR '1' = '1'
+```
+
+Jika nilai parameter dikirimkan ke server melalui GET method, dan nama domain dari web yang rentan adalah www.example.com, maka request yang dilakukan akan mejadi:
+
+```html
+http://www.example.com/index.php?username=1'%20or%20'1'%20=%20'1&password=1'%20or%20'1'%20=%20'1
+```
+
+Setelah analisis singkat, maka akan terlihat bahwa query mengembalikan suatu nilai (atau mengeset nilai) karena kondisinya selalu true (OR 1=1). Dengan cara ini sistem melakukan autentiasi user tanpa mengetahui isi dari username dan password.
+
+2. Testing Query Union pada SQL Injection
+
 
 ### Wordpress
 
